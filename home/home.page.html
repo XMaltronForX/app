@@ -1,0 +1,75 @@
+<ion-header >
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Qr App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+<!-- ===== SEGMENTOS ===== -->
+  <ion-segment [(ngModel)]="segment" >
+
+    <ion-segment-button value="scanear">
+      <ion-label>Escanear QR</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="generar">
+      <ion-label>Generar QR</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+  <!-- ===== ESCANEAR QR ====== -->
+    <div *ngIf="segment=== 'scanear' ">
+      este segmento es de Escanear
+
+    </div>
+  <!-- ===== GENERAR QR QR ====== -->
+    <div class="segment" *ngIf="segment=== 'generar' ">
+      <div class="segment-content">
+        <div id="QrImagen">
+          <div class="d-flex-center">
+            <div class="d-flex-center qr-wrapper">
+              <qr-code  *ngIf="QrText" [value]="QrText" 
+              size="190" 
+              errorCorrectionLevel="M" />
+              <img *ngIf="!QrText" class="qr-placeholder" src="assets/images/qr.webp" alt="">
+            </div>
+
+          </div>
+          <div class="ion-padding-top">{{QrText}}</div>
+        </div>
+        <br>
+        <ion-textarea label="Escribe algo para convertir a QR" labelPlacement="stacked" fill="outline" [(ngModel)]="QrText" rows="4" [autoGrow]="true"></ion-textarea>
+      </div>
+
+
+      <!-- ===== COMPARTIR EL QR ===== -->
+      <ion-button (click)="CaptureScrean()" *ngIf="QrText" class="submit ion-margin-top" expand="block" >
+       Compartir
+       <ion-icon slot="end" name="share-social-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+
+
+
+  <div id="container">
+    <ion-card>
+      <img alt="Silhouette of mountains" src="https://i.gifer.com/origin/22/22db2e3aeb47288465742da4caa3f571_w200.gif" />
+      <ion-card-header>
+        <ion-card-title>pato pato</ion-card-title>
+        <ion-card-subtitle>te pateara el santo pato</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        bailandoo bailandoo
+      </ion-card-content>
+      <ion-button [routerLink]="['/data1']" (click)="navegar()" expand="block">vamos a bailar?</ion-button>
+      <ion-button routerLink="/data2" expand="block">paras de bailar?</ion-button>
+      <ion-button routerLink="/data3" expand="block">vuelas?</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
