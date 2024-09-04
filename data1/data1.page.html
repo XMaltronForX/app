@@ -13,6 +13,59 @@
   
 
   
+<ion-content class="ion-padding ion-text-center">
+  <!-- ===== SEGMENTOS ===== -->
+    <ion-segment [(ngModel)]="segment" >
+  
+      <ion-segment-button value="scanear">
+        <ion-label>Escanear QR</ion-label>
+      </ion-segment-button>
+  
+      <ion-segment-button value="generar">
+        <ion-label>Generar QR</ion-label>
+      </ion-segment-button>
+  
+    </ion-segment>
+  
+    <!-- ===== ESCANEAR QR ====== -->
+      <div *ngIf="segment=== 'scanear' ">
+        este segmento es de Escanear
+  
+      </div>
+    <!-- ===== GENERAR QR QR ====== -->
+      <div class="segment" *ngIf="segment=== 'generar' ">
+        <div class="segment-content">
+          <div id="QrImagen">
+            <div class="d-flex-center">
+              <div class="d-flex-center qr-wrapper">
+                <qr-code  *ngIf="QrText" [value]="QrText" 
+                size="190" 
+                errorCorrectionLevel="M" />
+                <img *ngIf="!QrText" class="qr-placeholder" src="assets/images/qr.webp" alt="">
+              </div>
+  
+            </div>
+            <div class="ion-padding-top">{{QrText}}</div>
+          </div>
+          <br>
+          <ion-textarea label="Escribe algo para convertir a QR" labelPlacement="stacked" fill="outline" [(ngModel)]="QrText" rows="4" [autoGrow]="true"></ion-textarea>
+        </div>
+  
+  
+        <!-- ===== COMPARTIR EL QR ===== -->
+        <ion-button (click)="CaptureScrean()" *ngIf="QrText" class="submit ion-margin-top" expand="block" >
+         Compartir
+         <ion-icon slot="end" name="share-social-outline"></ion-icon>
+        </ion-button>
+  
+      </div>
+  
+  
+      <div></div>
+  
+
+
+
 
 <div id="container">
   <ion-card>
@@ -23,7 +76,7 @@
     </ion-card-header>
   
     <ion-card-content>
-      OBVIAMENTE VAMOS A BAILAR MUEVE ESE CUERPASO con {{omega.names}}
+      
     </ion-card-content>
     <ion-button routerLink="/home">volver</ion-button>
   </ion-card>

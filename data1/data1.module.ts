@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { Data1PageRoutingModule } from './data1-routing.module';
-
+import { QrCodeModule } from 'ng-qrcode';
 import { Data1Page } from './data1.page';
 
 @NgModule({
@@ -13,7 +13,10 @@ import { Data1Page } from './data1.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    Data1PageRoutingModule
+    Data1PageRoutingModule,
+    QrCodeModule
+
+    
   ],
   declarations: [Data1Page]
 })
