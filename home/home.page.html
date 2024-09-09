@@ -1,26 +1,81 @@
-<ion-header >
-  <ion-toolbar color="tertiary">
-    <ion-title>
-      Qr App
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">
+
+      <span class="duoc-text">Duoc</span><span class="uc-text"> UC</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="container">
-    <ion-card>
-      <img alt="Silhouette of mountains" src="https://i.gifer.com/origin/22/22db2e3aeb47288465742da4caa3f571_w200.gif" />
+
+<ion-content class="ion-padding">
+
+  <!-- Segmento para seleccionar entre Alumnos o Profesor -->
+  <ion-segment [(ngModel)]="userType" class="ion-margin-bottom">
+    <ion-segment-button (click)="changeSegment('alumno')">
+      <ion-label>Entrada para Alumnos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button (click)="changeSegment('profesor')">
+      <ion-label>Entrada para Profesor</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Inicio de sesión para Alumnos -->
+  <div *ngIf="userType === 'alumno'" class="login-container">
+    <ion-card class="login-card">
+      <img alt="Escáner de Código QR" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVjcnvcpHIW-X1BzfD2e5MSFTmKeYgZKEUVQ&s" />
       <ion-card-header>
-        <ion-card-title>pato pato</ion-card-title>
-        <ion-card-subtitle>te pateara el santo pato</ion-card-subtitle>
+        <ion-card-title>Bienvenido Alumno</ion-card-title>
+        <ion-card-subtitle>Inicia sesión para continuar</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
-        bailandoo bailandoo
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button expand="block" color="primary" (click)="iniciarSesion()">
+          Iniciar Sesión
+        </ion-button>
       </ion-card-content>
-      <ion-button [routerLink]="['/data1']" (click)="navegar()" expand="block">vamos a bailar?</ion-button>
-      <ion-button routerLink="/data2" expand="block">paras de bailar?</ion-button>
-      <ion-button routerLink="/data3" expand="block">vuelas?</ion-button>
     </ion-card>
   </div>
+
+  <!-- Inicio de sesión para Profesores -->
+  <div *ngIf="userType === 'profesor'" class="login-container">
+    <ion-card class="login-card">
+      <img alt="Profesor QR" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVjcnvcpHIW-X1BzfD2e5MSFTmKeYgZKEUVQ&s" />
+      <ion-card-header>
+        <ion-card-title>Bienvenido Profesor</ion-card-title>
+        <ion-card-subtitle>Inicia sesión con tus credenciales</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button expand="block" color="secondary" (click)="iniciarSesion()">
+          Iniciar Sesión
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title size="small">© 2024 App de QR</ion-title>
+  </ion-toolbar>
+</ion-footer>

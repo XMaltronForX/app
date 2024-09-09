@@ -70,3 +70,22 @@
      align-items: center;
    }
    
+
+   .custom-toolbar {
+    --background: #000000; }
+  
+  .custom-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+  }
+  
+  .duoc-text {
+    color: #ffd100; 
+  }
+  
+  .uc-text {
+    color: #ffffff; 
+  }
+  
