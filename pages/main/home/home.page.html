@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="signOut()">
+    Cerrar sesión
+  </ion-button>
+
+  <ion-button expand="full" routerLink="/main/profile">
+    Ir al Perfil
+  </ion-button>
+</ion-content>

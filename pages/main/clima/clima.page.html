@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="weatherData">
+    <h2>Pronóstico del Clima</h2>
+    <ion-list>
+      <ion-item *ngFor="let forecast of weatherData.list">
+        <h3>{{ forecast.dt_txt | date:'short' }}</h3>
+        <p>Temperatura: {{ forecast.main.temp }} K</p>
+        <p>Descripción: {{ forecast.weather[0].description }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
