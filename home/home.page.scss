@@ -1,0 +1,123 @@
+/* Contenedor del formulario de inicio de sesión */
+.login-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Tarjeta de inicio de sesión */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Imagen dentro de la tarjeta */
+.login-card img {
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para las tarjetas de información */
+.info-card {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos para los títulos */
+ion-card-title {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  color: #333333;
+}
+
+ion-card-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Estilos para los inputs (Correo y Contraseña) */
+ion-item {
+  --highlight-background: rgba(0, 0, 0, 0.1);
+  --border-color: #007bff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+ion-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+ion-input {
+  --placeholder-color: #999999;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  color: #333333;
+}
+
+/* Botones */
+ion-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+ion-button[color="primary"] {
+  background-color: #007bff;
+  color: white;
+}
+
+ion-button[color="primary"]:hover {
+  background-color: #0056b3;
+}
+
+ion-button[color="secondary"] {
+  background-color: #ff9800;
+  color: #000;
+}
+
+ion-button[color="secondary"]:hover {
+  background-color: #e67e22;
+}
+
+/* Footer */
+ion-footer {
+  text-align: center;
+}
+
+ion-footer ion-title {
+  font-size: 14px;
+  color: #666666;
+}
+
+
+
+.custom-toolbar {
+  --background: #000000; }
+
+.custom-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.duoc-text {
+  color: #ffd100; 
+}
+
+.uc-text {
+  color: #ffffff; 
+}
+
